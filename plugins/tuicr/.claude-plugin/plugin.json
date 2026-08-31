@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "tuicr",
+  "displayName": "tuicr Review",
+  "description": "Use tuicr review sessions from Claude and launch an interactive review pane in a preferred terminal multiplexer",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "homepage": "https://github.com/agavra/tuicr/blob/main/skills/tuicr/SKILL.md",
+  "repository": "https://github.com/agavra/tuicr",
+  "license": "MIT",
+  "keywords": ["code-review", "tui", "tuicr", "herdr", "tmux", "zellij", "cmux"]
+}

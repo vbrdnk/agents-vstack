@@ -1,0 +1,30 @@
+{
+  "name": "vbrdnk-claude-plugins",
+  "owner": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "metadata": {
+    "description": "A marketplace of personal Claude Code plugins",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "commit",
+      "description": "Generate and create a Conventional Commit from the reviewed working-tree changes",
+      "source": "./plugins/commit",
+      "category": "productivity"
+    },
+    {
+      "name": "review-handoff",
+      "description": "Generate a concise, self-contained change summary for another code reviewer",
+      "source": "./plugins/review-handoff",
+      "category": "productivity"
+    },
+    {
+      "name": "tuicr",
+      "description": "Use tuicr review sessions from Claude and launch an interactive review pane",
+      "source": "./plugins/tuicr",
+      "category": "code-quality"
+    }
+  ]
+}

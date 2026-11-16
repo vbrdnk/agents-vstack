@@ -1,6 +1,6 @@
 ---
 name: tuicr
-description: Use tuicr's review CLI to read or add comments in active TUI review sessions, and launch tuicr in Herdr, tmux, Zellij, or cmux when the user wants an interactive review pane.
+description: Use tuicr's review CLI to read or add comments in active TUI review sessions, and launch tuicr in Herdr, tmux, Zellij, cmux, or Rex when the user wants an interactive review pane.
 ---
 
 # tuicr Review Workflow
@@ -54,13 +54,14 @@ When an interactive pane is needed and no active session exists, use the first m
 | 2 | `$TMUX` is set | `<skill-directory>/tuicr-wrapper.sh /path/to/repo` |
 | 3 | `$ZELLIJ` is set | `<skill-directory>/tuicr-wrapper-zellij.sh /path/to/repo` |
 | 4 | `$CMUX_WORKSPACE_ID` is set | `<skill-directory>/tuicr-wrapper-cmux.sh /path/to/repo` |
+| 5 | `$REX_SESSION` is set | `<skill-directory>/tuicr-wrapper-rex.sh /path/to/repo` |
 
-If multiple markers are set, do not infer nesting: use the first matching row. If none are set, ask the user to start `tuicr` in the repository, then attach after they confirm it is ready.
+If multiple markers are set, do not infer nesting: use the first matching row. Rex is last because it is usually the outer terminal, so a multiplexer running inside it wins. If none are set, ask the user to start `tuicr` in the repository, then attach after they confirm it is ready.
 
 The wrappers support Git and Jujutsu repositories. A Jujutsu workspace may not contain `.git`, so do not pre-check with `git rev-parse`; let the wrapper validate the repository.
 
 - Herdr requires `jq` for pane IDs and completion results.
-- The tmux, Zellij, and Herdr wrappers block until tuicr exits. Use a long tool timeout, such as 10 minutes, when supported.
+- The tmux, Zellij, Herdr, and Rex wrappers block until tuicr exits. Use a long tool timeout, such as 10 minutes, when supported.
 - The cmux wrapper returns after launch and prints a surface reference between `=== TUICR SURFACE ===` markers. Capture it for `cmux close-surface --surface <ref>`.
 - If a blocking wrapper prevents other commands, read comments after the user exits tuicr.
 
@@ -114,6 +115,7 @@ The blocking wrappers may emit content between `=== TUICR INSTRUCTIONS ===` mark
 
 - If `tuicr` is missing, report that it must be installed rather than installing it without permission.
 - If a wrapper rejects the repository, ask for the correct directory.
+- Rex commands talk to the server over a Unix socket; if the Rex wrapper fails with `operation not permitted`, the agent's sandbox is blocking it - rerun outside the sandbox.
 - If cmux produces no surface reference, run `cmux list-panes` or ask the user to start tuicr manually.
 
 ## When Not to Use

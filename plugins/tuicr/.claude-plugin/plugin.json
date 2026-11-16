@@ -10,5 +10,5 @@
   "homepage": "https://github.com/agavra/tuicr/blob/main/skills/tuicr/SKILL.md",
   "repository": "https://github.com/agavra/tuicr",
   "license": "MIT",
-  "keywords": ["code-review", "tui", "tuicr", "herdr", "tmux", "zellij", "cmux"]
+  "keywords": ["code-review", "tui", "tuicr", "herdr", "tmux", "zellij", "cmux", "rex"]
 }

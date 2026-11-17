@@ -5,19 +5,13 @@
   },
   "metadata": {
     "description": "A marketplace of personal Claude Code plugins",
-    "version": "1.0.0"
+    "version": "2.0.0"
   },
   "plugins": [
     {
-      "name": "commit",
-      "description": "Generate and create a Conventional Commit from the reviewed working-tree changes",
-      "source": "./plugins/commit",
-      "category": "productivity"
-    },
-    {
-      "name": "review-handoff",
-      "description": "Generate a concise, self-contained change summary for another code reviewer",
-      "source": "./plugins/review-handoff",
+      "name": "git",
+      "description": "Git workflow skills: create Conventional Commits and write change summaries for code review",
+      "source": "./plugins/git",
       "category": "productivity"
     },
     {
@@ -27,22 +21,26 @@
       "category": "code-quality"
     },
     {
-      "name": "principle-type-system-discipline",
-      "description": "Language-agnostic type design principles: illegal states unrepresentable, branded primitives, boundary parsing, exhaustive matching",
-      "source": "./plugins/principle-type-system-discipline",
+      "name": "principles",
+      "description": "Language-agnostic engineering principles",
+      "source": "./plugins/principles",
       "category": "code-quality"
     },
     {
-      "name": "typescript-best-practices",
-      "description": "Apply strict TypeScript type-system practices when reading or editing .ts and .tsx files",
-      "source": "./plugins/typescript-best-practices",
+      "name": "practices",
+      "description": "Language-specific practices that ground the principles in concrete syntax",
+      "source": "./plugins/practices",
       "category": "code-quality"
     },
     {
-      "name": "unslop",
-      "description": "Cut AI writing patterns from text and add a human voice",
-      "source": "./plugins/unslop",
+      "name": "writing",
+      "description": "Writing skills",
+      "source": "./plugins/writing",
       "category": "productivity"
     }
-  ]
+  ],
+  "renames": {
+    "commit": "git",
+    "review-handoff": "git"
+  }
 }

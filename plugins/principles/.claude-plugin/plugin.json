@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "principles",
+  "displayName": "Principles",
+  "description": "Language-agnostic engineering principles",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "keywords": ["principles", "types", "type-safety", "code-quality"]
+}

@@ -3,7 +3,7 @@
   "name": "tuicr",
   "displayName": "tuicr Review",
   "description": "Use tuicr review sessions from Claude and launch an interactive review pane in a preferred terminal multiplexer",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": {
     "name": "Vladyslav Burdeniuk"
   },

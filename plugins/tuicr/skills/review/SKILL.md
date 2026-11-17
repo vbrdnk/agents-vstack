@@ -1,5 +1,5 @@
 ---
-name: tuicr
+name: review
 description: Use tuicr's review CLI to read or add comments in active TUI review sessions, and launch tuicr in Herdr, tmux, Zellij, cmux, or Rex when the user wants an interactive review pane.
 ---
 

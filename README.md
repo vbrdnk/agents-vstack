@@ -4,14 +4,16 @@ A personal Claude Code marketplace containing reusable Git workflow, coding, and
 
 ## Plugins
 
-| Plugin | Skill | Purpose |
+| Plugin | Skills | Purpose |
 | --- | --- | --- |
-| `commit` | `/commit:commit` | Review the working tree, generate a Conventional Commit message, stage the reviewed changes, and commit |
-| `review-handoff` | `/review-handoff:review-handoff` | Summarize uncommitted and committed-ahead changes for another code reviewer |
-| `tuicr` | `/tuicr:tuicr` | Use active tuicr review sessions or launch a review pane with Herdr, tmux, Zellij, cmux, or Rex |
-| `principle-type-system-discipline` | `/principle-type-system-discipline:principle-type-system-discipline` | Apply language-agnostic type design principles; grounded per language by skills like `typescript-best-practices` |
-| `typescript-best-practices` | `/typescript-best-practices:typescript-best-practices` | Apply strict TypeScript type-system practices when reading or editing `.ts`/`.tsx` files |
-| `unslop` | `/unslop:unslop` | Cut AI writing patterns from text and add a human voice |
+| `git` | `/git:commit` | Review the working tree, generate a Conventional Commit message, stage the reviewed changes, and commit |
+| | `/git:review-handoff` | Summarize uncommitted and committed-ahead changes for another code reviewer |
+| `tuicr` | `/tuicr:review` | Use active tuicr review sessions or launch a review pane with Herdr, tmux, Zellij, cmux, or Rex |
+| `principles` | `/principles:type-system` | Apply language-agnostic type design principles |
+| `practices` | `/practices:typescript` | Ground the principles in TypeScript when reading or editing `.ts`/`.tsx` files |
+| `writing` | `/writing:unslop` | Cut AI writing patterns from text and add a human voice |
+
+`practices` skills build on `principles`, so install both.
 
 ## Install
 
@@ -24,12 +26,11 @@ claude plugin marketplace add vbrdnk/claude-setup
 Install any of the plugins:
 
 ```bash
-claude plugin install commit@vbrdnk-claude-plugins
-claude plugin install review-handoff@vbrdnk-claude-plugins
+claude plugin install git@vbrdnk-claude-plugins
 claude plugin install tuicr@vbrdnk-claude-plugins
-claude plugin install principle-type-system-discipline@vbrdnk-claude-plugins
-claude plugin install typescript-best-practices@vbrdnk-claude-plugins
-claude plugin install unslop@vbrdnk-claude-plugins
+claude plugin install principles@vbrdnk-claude-plugins
+claude plugin install practices@vbrdnk-claude-plugins
+claude plugin install writing@vbrdnk-claude-plugins
 ```
 
 Run `/reload-plugins` after installation. Restart Claude Code only if the skills still do not appear.
@@ -40,15 +41,25 @@ Plugin versions are pinned by each `plugin.json`. Bump the affected version befo
 
 ```bash
 claude plugin marketplace update vbrdnk-claude-plugins
-claude plugin update commit@vbrdnk-claude-plugins
-claude plugin update review-handoff@vbrdnk-claude-plugins
+claude plugin update git@vbrdnk-claude-plugins
 claude plugin update tuicr@vbrdnk-claude-plugins
-claude plugin update principle-type-system-discipline@vbrdnk-claude-plugins
-claude plugin update typescript-best-practices@vbrdnk-claude-plugins
-claude plugin update unslop@vbrdnk-claude-plugins
+claude plugin update principles@vbrdnk-claude-plugins
+claude plugin update practices@vbrdnk-claude-plugins
+claude plugin update writing@vbrdnk-claude-plugins
 ```
 
 Only run the `plugin update` command for plugins whose versions changed.
+
+### Migrating from the 1.x layout
+
+The `commit` and `review-handoff` plugins are now skills in the `git` plugin, and `/tuicr:tuicr` is now `/tuicr:review`. The marketplace maps the old plugin names to `git`; if an old install lingers, remove it and install the new plugin:
+
+```bash
+claude plugin uninstall commit@vbrdnk-claude-plugins
+claude plugin uninstall review-handoff@vbrdnk-claude-plugins
+claude plugin install git@vbrdnk-claude-plugins
+claude plugin update tuicr@vbrdnk-claude-plugins
+```
 
 ## Validate locally
 
@@ -61,12 +72,11 @@ claude plugin validate . --strict
 You can also load one plugin directly during development:
 
 ```bash
-claude --plugin-dir ./plugins/commit
-claude --plugin-dir ./plugins/review-handoff
+claude --plugin-dir ./plugins/git
 claude --plugin-dir ./plugins/tuicr
-claude --plugin-dir ./plugins/principle-type-system-discipline
-claude --plugin-dir ./plugins/typescript-best-practices
-claude --plugin-dir ./plugins/unslop
+claude --plugin-dir ./plugins/principles
+claude --plugin-dir ./plugins/practices
+claude --plugin-dir ./plugins/writing
 ```
 
 ## tuicr requirements and attribution

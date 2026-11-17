@@ -1,6 +1,7 @@
 ---
 name: review-handoff
 description: "Generate a concise change summary for code review by another agent. Covers uncommitted and committed-ahead-of-base changes with decision rationale. Use when the user asks for a change summary, review prep, or wants to describe what changed, including 'summarize my changes' or 'what did I change'."
+disable-model-invocation: true
 allowed-tools:
   - Read
   - Grep

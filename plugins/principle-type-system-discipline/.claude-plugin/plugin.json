@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "principle-type-system-discipline",
+  "displayName": "Type System Discipline",
+  "description": "Language-agnostic type design principles: illegal states unrepresentable, branded primitives, boundary parsing, exhaustive matching",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "keywords": ["types", "type-safety", "principles", "code-quality"]
+}

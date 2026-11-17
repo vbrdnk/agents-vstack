@@ -27,6 +27,12 @@
       "category": "code-quality"
     },
     {
+      "name": "principle-type-system-discipline",
+      "description": "Language-agnostic type design principles: illegal states unrepresentable, branded primitives, boundary parsing, exhaustive matching",
+      "source": "./plugins/principle-type-system-discipline",
+      "category": "code-quality"
+    },
+    {
       "name": "typescript-best-practices",
       "description": "Apply strict TypeScript type-system practices when reading or editing .ts and .tsx files",
       "source": "./plugins/typescript-best-practices",

@@ -25,6 +25,18 @@
       "description": "Use tuicr review sessions from Claude and launch an interactive review pane",
       "source": "./plugins/tuicr",
       "category": "code-quality"
+    },
+    {
+      "name": "typescript-best-practices",
+      "description": "Apply strict TypeScript type-system practices when reading or editing .ts and .tsx files",
+      "source": "./plugins/typescript-best-practices",
+      "category": "code-quality"
+    },
+    {
+      "name": "unslop",
+      "description": "Cut AI writing patterns from text and add a human voice",
+      "source": "./plugins/unslop",
+      "category": "productivity"
     }
   ]
 }

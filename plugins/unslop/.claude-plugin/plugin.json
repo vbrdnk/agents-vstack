@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "unslop",
+  "displayName": "Unslop",
+  "description": "Cut AI writing patterns from text and add a human voice",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "keywords": ["writing", "editing", "style", "productivity"]
+}

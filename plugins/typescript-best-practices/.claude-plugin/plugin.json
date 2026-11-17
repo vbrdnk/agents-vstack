@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "typescript-best-practices",
+  "displayName": "TypeScript Best Practices",
+  "description": "Apply strict TypeScript type-system practices when reading or editing .ts and .tsx files",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "keywords": ["typescript", "types", "best-practices", "code-quality"]
+}

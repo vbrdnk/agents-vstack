@@ -3,9 +3,10 @@
   "name": "practices",
   "displayName": "Practices",
   "description": "Language-specific practices that ground the principles in concrete syntax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Vladyslav Burdeniuk"
   },
+  "license": "MIT",
   "keywords": ["practices", "typescript", "types", "code-quality"]
 }

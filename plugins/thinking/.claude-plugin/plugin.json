@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "thinking",
+  "displayName": "Thinking",
+  "description": "Understand code and stress-test decisions: explain how and why code works, sketch designs before coding, and doubt a decision with a fresh-context reviewer",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladyslav Burdeniuk"
+  },
+  "license": "MIT",
+  "keywords": ["architecture", "design", "code-understanding", "review", "verification"]
+}

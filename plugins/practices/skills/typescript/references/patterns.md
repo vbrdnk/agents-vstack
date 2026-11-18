@@ -224,3 +224,5 @@ openFile({
 ```
 
 Skip on hot paths: per-frame render, tokenizers, parsers, anything in a tight loop where the allocation cost matters.
+
+Based on [pstack `typescript-best-practices` patterns](https://github.com/cursor/plugins/blob/93b916d4a1e806507e22f4716b352fa91f2b227e/pstack/skills/typescript-best-practices/references/patterns.md) by Lauren Tan (MIT), with changes.

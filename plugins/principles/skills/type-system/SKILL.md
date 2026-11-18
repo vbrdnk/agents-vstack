@@ -26,3 +26,5 @@ Applies to any typed language. Skills like `practices:typescript` ground it in s
 - "Where did this `any`, this `as`, this `assertNotNull` come from?" Trace it to the boundary and validate there instead.
 - "If a new variant is added next month, will the compiler tell the next agent where to add a case?" If no, the match isn't exhaustive.
 - "Is this type duplicating a shape another file owns?" Derive instead.
+
+Based on [pstack `principle-type-system-discipline`](https://github.com/cursor/plugins/blob/93b916d4a1e806507e22f4716b352fa91f2b227e/pstack/skills/principle-type-system-discipline/SKILL.md) by Lauren Tan (MIT), with changes.

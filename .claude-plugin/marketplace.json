@@ -27,6 +27,12 @@
       "category": "code-quality"
     },
     {
+      "name": "thinking",
+      "description": "Explain how and why code works, sketch designs before coding, and stress-test decisions with a fresh-context reviewer",
+      "source": "./plugins/thinking",
+      "category": "code-quality"
+    },
+    {
       "name": "practices",
       "description": "Language-specific practices that ground the principles in concrete syntax",
       "source": "./plugins/practices",
@@ -36,6 +42,12 @@
       "name": "writing",
       "description": "Writing skills",
       "source": "./plugins/writing",
+      "category": "productivity"
+    },
+    {
+      "name": "session",
+      "description": "Catch up on what changed since your last message, and turn session learnings into skill edits",
+      "source": "./plugins/session",
       "category": "productivity"
     }
   ],

@@ -3,9 +3,10 @@
   "name": "principles",
   "displayName": "Principles",
   "description": "Language-agnostic engineering principles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Vladyslav Burdeniuk"
   },
+  "license": "MIT",
   "keywords": ["principles", "types", "type-safety", "code-quality"]
 }

@@ -21,3 +21,5 @@ Apply the `principles:type-system` skill first; this skill grounds it in TypeScr
 | Object args           | Pass objects, not positional, so argument order is self-documenting. Skip on hot paths (per-frame render, tokenizers, parsers).             |
 
 Examples: `references/patterns.md`.
+
+Based on [pstack `typescript-best-practices`](https://github.com/cursor/plugins/blob/93b916d4a1e806507e22f4716b352fa91f2b227e/pstack/skills/typescript-best-practices/SKILL.md) by Lauren Tan (MIT), with changes.

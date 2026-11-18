@@ -3,7 +3,7 @@
   "name": "git",
   "displayName": "Git",
   "description": "Git workflow skills: create Conventional Commits and write change summaries for code review",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Vladyslav Burdeniuk"
   },

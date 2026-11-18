@@ -93,7 +93,7 @@ Require explicit approval before writing agent-authored findings into tuicr.
 - Prefer a line comment when a file and line are known.
 - Use a file comment for file-wide feedback and a review comment for the whole review.
 - Default genuine problems to `--type issue`; use `suggestion`, `note`, or `praise` when more accurate.
-- Always pass `--username` so the author is distinguishable.
+- Always pass `--username` with your agent name (for example `Claude` or `Codex`) so the author is distinguishable.
 
 ```bash
 tuicr review add --repo /path/to/repo --session <slug> \

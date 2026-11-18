@@ -22,7 +22,7 @@ A decision is non-trivial when at least one of these is true:
 
 Skip it for mechanical edits (renames, formatting, file moves), clear and unambiguous user instructions, reading or summarizing code, one-line changes with obvious correctness, and running tools. Skip it when the user asked for speed over verification.
 
-Run this skill from the main session. A subagent cannot spawn its own reviewer. If you are inside one, tell the user that doubt has to run from the main session.
+Run this skill from the main session. A subagent cannot spawn its own reviewer. If you are inside one, or your harness has no subagents, tell the user that doubt has to run from a main session that can spawn one.
 
 ## The process
 

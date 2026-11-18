@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "tuicr",
   "displayName": "tuicr Review",
-  "description": "Use tuicr review sessions from Claude and launch an interactive review pane in a preferred terminal multiplexer",
+  "description": "Use tuicr review sessions from a coding agent and launch an interactive review pane in a preferred terminal multiplexer",
   "version": "2.0.1",
   "author": {
     "name": "Vladyslav Burdeniuk"

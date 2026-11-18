@@ -1,6 +1,12 @@
-# Personal Claude Code Plugins
+# Personal Agent Plugins
 
-A personal Claude Code marketplace containing reusable Git workflow, coding, thinking, writing, and session skills.
+A personal marketplace of reusable AI agent skills.
+
+| Harness | How it loads the skills | Invoke a skill |
+| --- | --- | --- |
+| Claude Code | Plugin marketplace (`.claude-plugin/`) | `/git:commit` |
+| Codex | Plugin marketplace (`.agents/plugins/marketplace.json`) | `$git:commit`, or pick from `/skills` |
+| OpenCode 2.x | `skills` path in `opencode.json` pointing at a clone | `@commit` |
 
 ## Plugins
 
@@ -23,9 +29,11 @@ A personal Claude Code marketplace containing reusable Git workflow, coding, thi
 
 `practices` skills build on `principles`, so install both.
 
-`principles:test-behavior`, `writing:technical-writing`, and the existing `principles`, `practices`, and `writing` skills can trigger on their own. The `thinking` and `session` skills run only when you invoke them.
+The Skills column uses Claude Code names. The `principles`, `practices`, `writing`, and `tuicr` skills can trigger on their own. The `git`, `thinking`, and `session` skills run only when you invoke them, in every harness: Claude Code and OpenCode read `disable-model-invocation: true`, and Codex reads `agents/openai.yaml` in each skill.
 
-## Install
+## Claude Code
+
+### Install
 
 Add the marketplace from GitHub:
 
@@ -36,44 +44,89 @@ claude plugin marketplace add vbrdnk/agents-vstack
 Install any of the plugins:
 
 ```bash
-claude plugin install git@vbrdnk-claude-plugins
-claude plugin install tuicr@vbrdnk-claude-plugins
-claude plugin install principles@vbrdnk-claude-plugins
-claude plugin install thinking@vbrdnk-claude-plugins
-claude plugin install practices@vbrdnk-claude-plugins
-claude plugin install writing@vbrdnk-claude-plugins
-claude plugin install session@vbrdnk-claude-plugins
+claude plugin install git@agents-vstack
+claude plugin install tuicr@agents-vstack
+claude plugin install principles@agents-vstack
+claude plugin install thinking@agents-vstack
+claude plugin install practices@agents-vstack
+claude plugin install writing@agents-vstack
+claude plugin install session@agents-vstack
 ```
 
 Run `/reload-plugins` after installation. Restart Claude Code only if the skills still do not appear.
 
-## Update installed plugins
+### Update installed plugins
 
 Plugin versions are pinned by each `plugin.json`. Bump the affected version before publishing an update, then run:
 
 ```bash
-claude plugin marketplace update vbrdnk-claude-plugins
-claude plugin update git@vbrdnk-claude-plugins
-claude plugin update tuicr@vbrdnk-claude-plugins
-claude plugin update principles@vbrdnk-claude-plugins
-claude plugin update thinking@vbrdnk-claude-plugins
-claude plugin update practices@vbrdnk-claude-plugins
-claude plugin update writing@vbrdnk-claude-plugins
-claude plugin update session@vbrdnk-claude-plugins
+claude plugin marketplace update agents-vstack
+claude plugin update git@agents-vstack
+claude plugin update tuicr@agents-vstack
+claude plugin update principles@agents-vstack
+claude plugin update thinking@agents-vstack
+claude plugin update practices@agents-vstack
+claude plugin update writing@agents-vstack
+claude plugin update session@agents-vstack
 ```
 
 Only run the `plugin update` command for plugins whose versions changed.
 
-### Migrating from the 1.x layout
+#### Migrating from `vbrdnk-claude-plugins`
 
-The `commit` and `review-handoff` plugins are now skills in the `git` plugin, and `/tuicr:tuicr` is now `/tuicr:review`. The marketplace maps the old plugin names to `git`; if an old install lingers, remove it and install the new plugin:
+The marketplace was renamed from `vbrdnk-claude-plugins` to `agents-vstack`. Older installs also had separate `commit` and `review-handoff` plugins, which are now skills in the `git` plugin, and `/tuicr:tuicr` is now `/tuicr:review`. Uninstall each plugin you had from the old marketplace (`claude plugin list` shows them), remove the old marketplace, then add it again under the new name and install the plugins you want:
 
 ```bash
-claude plugin uninstall commit@vbrdnk-claude-plugins
-claude plugin uninstall review-handoff@vbrdnk-claude-plugins
-claude plugin install git@vbrdnk-claude-plugins
-claude plugin update tuicr@vbrdnk-claude-plugins
+claude plugin uninstall tuicr@vbrdnk-claude-plugins   # repeat for each installed plugin
+claude plugin marketplace remove vbrdnk-claude-plugins
+claude plugin marketplace add vbrdnk/agents-vstack
+claude plugin install git@agents-vstack
 ```
+
+## Codex
+
+### Install
+
+Add the marketplace from GitHub, then install the plugins you want:
+
+```bash
+codex plugin marketplace add vbrdnk/agents-vstack
+codex plugin add git@agents-vstack
+codex plugin add tuicr@agents-vstack
+codex plugin add principles@agents-vstack
+codex plugin add thinking@agents-vstack
+codex plugin add practices@agents-vstack
+codex plugin add writing@agents-vstack
+codex plugin add session@agents-vstack
+```
+
+Start a new Codex session to load the skills. Skills are named `plugin:skill`, the same as in Claude Code.
+
+### Update
+
+```bash
+codex plugin marketplace upgrade agents-vstack
+```
+
+Codex caches each plugin by the `version` in its `plugin.json`, so bump the version before publishing an update.
+
+## OpenCode
+
+OpenCode 2.x reads skills from any folder listed in the `skills` array of its config. Clone this repository and point OpenCode at the `plugins` folder:
+
+```bash
+git clone https://github.com/vbrdnk/agents-vstack.git ~/git/agents-vstack
+```
+
+Add the path to `~/.config/opencode/opencode.json`:
+
+```json
+{
+  "skills": ["~/git/agents-vstack/plugins"]
+}
+```
+
+OpenCode finds every `SKILL.md` under that folder. To update, run `git pull` in the clone. Skills are named by their directory, without the plugin prefix, so `/git:commit` in Claude Code is `@commit` in OpenCode.
 
 ## Validate locally
 
@@ -81,6 +134,16 @@ From the repository root:
 
 ```bash
 claude plugin validate . --strict
+```
+
+Codex has no validate command. Install the local marketplace into a throwaway Codex home and list what it sees:
+
+```bash
+(
+  export CODEX_HOME="$(mktemp -d)"
+  codex plugin marketplace add ./
+  codex plugin list
+)
 ```
 
 You can also load one plugin directly during development:

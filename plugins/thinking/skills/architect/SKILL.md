@@ -8,6 +8,6 @@ disable-model-invocation: true
 
 Before writing code, trace every system the change touches, then sketch two different shapes for it (types, signatures, module boundaries) and pick the one where each piece of state has one owner, each task has one way to do it, and callers need to know least. Redesign instead of patching if workarounds repeat.
 
-For a large or contested design, sketch each shape in its own parallel `Plan` subagent, then compare them side by side and pick one.
+For a large or contested design, sketch each shape in its own parallel planning subagent (in Claude Code, `Plan`), then compare them side by side and pick one.
 
 Adapted from [pstack `architect`](https://github.com/cursor/plugins/blob/93b916d4a1e806507e22f4716b352fa91f2b227e/pstack/skills/architect/SKILL.md) by Lauren Tan (MIT).

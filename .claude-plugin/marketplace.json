@@ -1,11 +1,11 @@
 {
-  "name": "vbrdnk-claude-plugins",
+  "name": "agents-vstack",
   "owner": {
     "name": "Vladyslav Burdeniuk"
   },
   "metadata": {
-    "description": "A marketplace of personal Claude Code plugins",
-    "version": "2.0.0"
+    "description": "A marketplace of personal agent plugins for Claude Code, Codex, and OpenCode",
+    "version": "3.0.0"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "name": "tuicr",
-      "description": "Use tuicr review sessions from Claude and launch an interactive review pane",
+      "description": "Use tuicr review sessions from a coding agent and launch an interactive review pane",
       "source": "./plugins/tuicr",
       "category": "code-quality"
     },

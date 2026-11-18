@@ -2,11 +2,11 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "session",
   "displayName": "Session",
-  "description": "Session-level skills: catch up on what changed since your last message, and turn session learnings into skill edits",
+  "description": "Session-level skills: catch up on what changed since your last message, hand the session off to a fresh agent, and turn session learnings into skill edits",
   "version": "1.0.0",
   "author": {
     "name": "Vladyslav Burdeniuk"
   },
   "license": "MIT",
-  "keywords": ["session", "catchup", "summary", "reflect", "skills"]
+  "keywords": ["session", "catchup", "summary", "reflect", "handoff", "skills"]
 }

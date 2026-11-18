@@ -26,6 +26,7 @@ A personal marketplace of reusable AI agent skills.
 | | `/writing:technical-writing` | Apply a layered technical-writing standard to docs, RFCs, PR descriptions, and commit messages |
 | `session` | `/session:catchup` | Summarize what changed since your last message and list the calls waiting on you |
 | | `/session:reflect` | Turn durable learnings from the session into proposed skill edits |
+| | `/session:handoff` | Write a handoff document so a fresh agent can continue this session's work |
 
 `practices` skills build on `principles`, so install both.
 
@@ -175,7 +176,8 @@ Several skills are adapted from MIT-licensed projects. Each adapted `SKILL.md` e
 | `writing` | `unslop`, `technical-writing` | [cursor/plugins `pstack`](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan | `plugins/writing/LICENSE` |
 | `thinking` | `how`, `why`, `architect` | [cursor/plugins `pstack`](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan | `plugins/thinking/THIRD_PARTY_NOTICES.md` |
 | `thinking` | `doubt` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) by Addy Osmani | `plugins/thinking/THIRD_PARTY_NOTICES.md` |
-| `session` | `catchup`, `reflect` | [cursor/plugins `pstack`](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan | `plugins/session/LICENSE` |
+| `session` | `catchup`, `reflect` | [cursor/plugins `pstack`](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan | `plugins/session/THIRD_PARTY_NOTICES.md` |
+| `session` | `handoff` | [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pocock | `plugins/session/THIRD_PARTY_NOTICES.md` |
 | `tuicr` | `review` | [agavra/tuicr](https://github.com/agavra/tuicr) | `plugins/tuicr/LICENSE` |
 
 "Adapted from" marks a skill kept close to upstream. "Based on, with changes" marks a skill that was substantially rewritten.

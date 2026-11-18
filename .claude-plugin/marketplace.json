@@ -46,7 +46,7 @@
     },
     {
       "name": "session",
-      "description": "Catch up on what changed since your last message, and turn session learnings into skill edits",
+      "description": "Catch up on what changed since your last message, hand the session off to a fresh agent, and turn session learnings into skill edits",
       "source": "./plugins/session",
       "category": "productivity"
     }

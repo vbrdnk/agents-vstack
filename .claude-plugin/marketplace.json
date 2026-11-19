@@ -28,7 +28,7 @@
     },
     {
       "name": "thinking",
-      "description": "Explain how and why code works, sketch designs before coding, and stress-test decisions with a fresh-context reviewer",
+      "description": "Explain how and why code works, teach how a command or concept works, sketch designs before coding, and stress-test decisions with a fresh-context reviewer",
       "source": "./plugins/thinking",
       "category": "code-quality"
     },

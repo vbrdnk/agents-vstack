@@ -21,6 +21,7 @@ A personal marketplace of reusable AI agent skills.
 | | `/thinking:why` | Explain why code is the way it is, cited from commits and PR discussions |
 | | `/thinking:architect` | Sketch two shapes for types, signatures, and modules before writing code |
 | | `/thinking:doubt` | Cross-examine a non-trivial decision with a fresh-context adversarial reviewer |
+| | `/thinking:teach-me` | Explain plainly how a CLI command, tool, concept, or piece of code works |
 | `practices` | `/practices:typescript` | Ground the principles in TypeScript when reading or editing `.ts`/`.tsx` files |
 | `writing` | `/writing:unslop` | Cut AI writing patterns from text and add a human voice |
 | | `/writing:technical-writing` | Apply a layered technical-writing standard to docs, RFCs, PR descriptions, and commit messages |
